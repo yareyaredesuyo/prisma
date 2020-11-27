@@ -1151,6 +1151,7 @@ export namespace Prisma {
     | 'executeRaw'
     | 'queryRaw'
     | 'aggregate'
+    | 'count'
 
   /**
    * These options are being passed in to the middleware as "params"
@@ -1443,6 +1444,12 @@ export namespace Prisma {
       args: Subset<T, PostUpsertArgs>
     ): CheckSelect<T, Prisma__PostClient<Post>, Prisma__PostClient<PostGetPayload<T>>>
     /**
+     * Aggregate Post.
+    **/
+    aggregate<T extends AggregatePostArgs>(
+      args: Subset<T, AggregatePostArgs>
+    ): Promise<GetPostAggregateType<T>>
+    /**
      * Find zero or one Post that matches the filter.
      * @param {FindUniquePostArgs} args - Arguments to find a Post
      * @deprecated This will be deprecated please use prisma.post.findUnique
@@ -1459,13 +1466,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__PostClient<Post | null>, Prisma__PostClient<PostGetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyPostArgs, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregatePostArgs>(args: Subset<T, AggregatePostArgs>): Promise<GetPostAggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyPostArgs, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
@@ -2014,6 +2018,12 @@ export namespace Prisma {
       args: Subset<T, UserUpsertArgs>
     ): CheckSelect<T, Prisma__UserClient<User>, Prisma__UserClient<UserGetPayload<T>>>
     /**
+     * Aggregate User.
+    **/
+    aggregate<T extends AggregateUserArgs>(
+      args: Subset<T, AggregateUserArgs>
+    ): Promise<GetUserAggregateType<T>>
+    /**
      * Find zero or one User that matches the filter.
      * @param {FindUniqueUserArgs} args - Arguments to find a User
      * @deprecated This will be deprecated please use prisma.user.findUnique
@@ -2030,13 +2040,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__UserClient<User | null>, Prisma__UserClient<UserGetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyUserArgs, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregateUserArgs>(args: Subset<T, AggregateUserArgs>): Promise<GetUserAggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyUserArgs, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
@@ -2584,6 +2591,12 @@ export namespace Prisma {
       args: Subset<T, MUpsertArgs>
     ): CheckSelect<T, Prisma__MClient<M>, Prisma__MClient<MGetPayload<T>>>
     /**
+     * Aggregate M.
+    **/
+    aggregate<T extends AggregateMArgs>(
+      args: Subset<T, AggregateMArgs>
+    ): Promise<GetMAggregateType<T>>
+    /**
      * Find zero or one M that matches the filter.
      * @param {FindUniqueMArgs} args - Arguments to find a M
      * @deprecated This will be deprecated please use prisma.m.findUnique
@@ -2600,13 +2613,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__MClient<M | null>, Prisma__MClient<MGetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyMArgs, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregateMArgs>(args: Subset<T, AggregateMArgs>): Promise<GetMAggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyMArgs, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
@@ -3154,6 +3164,12 @@ export namespace Prisma {
       args: Subset<T, NUpsertArgs>
     ): CheckSelect<T, Prisma__NClient<N>, Prisma__NClient<NGetPayload<T>>>
     /**
+     * Aggregate N.
+    **/
+    aggregate<T extends AggregateNArgs>(
+      args: Subset<T, AggregateNArgs>
+    ): Promise<GetNAggregateType<T>>
+    /**
      * Find zero or one N that matches the filter.
      * @param {FindUniqueNArgs} args - Arguments to find a N
      * @deprecated This will be deprecated please use prisma.n.findUnique
@@ -3170,13 +3186,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__NClient<N | null>, Prisma__NClient<NGetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyNArgs, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregateNArgs>(args: Subset<T, AggregateNArgs>): Promise<GetNAggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyNArgs, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
@@ -3724,6 +3737,12 @@ export namespace Prisma {
       args: Subset<T, OneOptionalUpsertArgs>
     ): CheckSelect<T, Prisma__OneOptionalClient<OneOptional>, Prisma__OneOptionalClient<OneOptionalGetPayload<T>>>
     /**
+     * Aggregate OneOptional.
+    **/
+    aggregate<T extends AggregateOneOptionalArgs>(
+      args: Subset<T, AggregateOneOptionalArgs>
+    ): Promise<GetOneOptionalAggregateType<T>>
+    /**
      * Find zero or one OneOptional that matches the filter.
      * @param {FindUniqueOneOptionalArgs} args - Arguments to find a OneOptional
      * @deprecated This will be deprecated please use prisma.oneOptional.findUnique
@@ -3740,13 +3759,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__OneOptionalClient<OneOptional | null>, Prisma__OneOptionalClient<OneOptionalGetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyOneOptionalArgs, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregateOneOptionalArgs>(args: Subset<T, AggregateOneOptionalArgs>): Promise<GetOneOptionalAggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyOneOptionalArgs, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
@@ -4303,6 +4319,12 @@ export namespace Prisma {
       args: Subset<T, ManyRequiredUpsertArgs>
     ): CheckSelect<T, Prisma__ManyRequiredClient<ManyRequired>, Prisma__ManyRequiredClient<ManyRequiredGetPayload<T>>>
     /**
+     * Aggregate ManyRequired.
+    **/
+    aggregate<T extends AggregateManyRequiredArgs>(
+      args: Subset<T, AggregateManyRequiredArgs>
+    ): Promise<GetManyRequiredAggregateType<T>>
+    /**
      * Find zero or one ManyRequired that matches the filter.
      * @param {FindUniqueManyRequiredArgs} args - Arguments to find a ManyRequired
      * @deprecated This will be deprecated please use prisma.manyRequired.findUnique
@@ -4319,13 +4341,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__ManyRequiredClient<ManyRequired | null>, Prisma__ManyRequiredClient<ManyRequiredGetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyManyRequiredArgs, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregateManyRequiredArgs>(args: Subset<T, AggregateManyRequiredArgs>): Promise<GetManyRequiredAggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyManyRequiredArgs, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
@@ -4882,6 +4901,12 @@ export namespace Prisma {
       args: Subset<T, OptionalSide1UpsertArgs>
     ): CheckSelect<T, Prisma__OptionalSide1Client<OptionalSide1>, Prisma__OptionalSide1Client<OptionalSide1GetPayload<T>>>
     /**
+     * Aggregate OptionalSide1.
+    **/
+    aggregate<T extends AggregateOptionalSide1Args>(
+      args: Subset<T, AggregateOptionalSide1Args>
+    ): Promise<GetOptionalSide1AggregateType<T>>
+    /**
      * Find zero or one OptionalSide1 that matches the filter.
      * @param {FindUniqueOptionalSide1Args} args - Arguments to find a OptionalSide1
      * @deprecated This will be deprecated please use prisma.optionalSide1.findUnique
@@ -4898,13 +4923,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__OptionalSide1Client<OptionalSide1 | null>, Prisma__OptionalSide1Client<OptionalSide1GetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyOptionalSide1Args, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregateOptionalSide1Args>(args: Subset<T, AggregateOptionalSide1Args>): Promise<GetOptionalSide1AggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyOptionalSide1Args, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
@@ -5452,6 +5474,12 @@ export namespace Prisma {
       args: Subset<T, OptionalSide2UpsertArgs>
     ): CheckSelect<T, Prisma__OptionalSide2Client<OptionalSide2>, Prisma__OptionalSide2Client<OptionalSide2GetPayload<T>>>
     /**
+     * Aggregate OptionalSide2.
+    **/
+    aggregate<T extends AggregateOptionalSide2Args>(
+      args: Subset<T, AggregateOptionalSide2Args>
+    ): Promise<GetOptionalSide2AggregateType<T>>
+    /**
      * Find zero or one OptionalSide2 that matches the filter.
      * @param {FindUniqueOptionalSide2Args} args - Arguments to find a OptionalSide2
      * @deprecated This will be deprecated please use prisma.optionalSide2.findUnique
@@ -5468,13 +5496,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__OptionalSide2Client<OptionalSide2 | null>, Prisma__OptionalSide2Client<OptionalSide2GetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyOptionalSide2Args, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregateOptionalSide2Args>(args: Subset<T, AggregateOptionalSide2Args>): Promise<GetOptionalSide2AggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyOptionalSide2Args, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
@@ -6043,6 +6068,12 @@ export namespace Prisma {
       args: Subset<T, AUpsertArgs>
     ): CheckSelect<T, Prisma__AClient<A>, Prisma__AClient<AGetPayload<T>>>
     /**
+     * Aggregate A.
+    **/
+    aggregate<T extends AggregateAArgs>(
+      args: Subset<T, AggregateAArgs>
+    ): Promise<GetAAggregateType<T>>
+    /**
      * Find zero or one A that matches the filter.
      * @param {FindUniqueAArgs} args - Arguments to find a A
      * @deprecated This will be deprecated please use prisma.a.findUnique
@@ -6059,13 +6090,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__AClient<A | null>, Prisma__AClient<AGetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyAArgs, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregateAArgs>(args: Subset<T, AggregateAArgs>): Promise<GetAAggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyAArgs, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
@@ -6554,6 +6582,12 @@ export namespace Prisma {
       args: Subset<T, BUpsertArgs>
     ): CheckSelect<T, Prisma__BClient<B>, Prisma__BClient<BGetPayload<T>>>
     /**
+     * Aggregate B.
+    **/
+    aggregate<T extends AggregateBArgs>(
+      args: Subset<T, AggregateBArgs>
+    ): Promise<GetBAggregateType<T>>
+    /**
      * Find zero or one B that matches the filter.
      * @param {FindUniqueBArgs} args - Arguments to find a B
      * @deprecated This will be deprecated please use prisma.b.findUnique
@@ -6570,13 +6604,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__BClient<B | null>, Prisma__BClient<BGetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyBArgs, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregateBArgs>(args: Subset<T, AggregateBArgs>): Promise<GetBAggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyBArgs, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
@@ -7002,6 +7033,12 @@ export namespace Prisma {
       args: Subset<T, CUpsertArgs>
     ): CheckSelect<T, Prisma__CClient<C>, Prisma__CClient<CGetPayload<T>>>
     /**
+     * Aggregate C.
+    **/
+    aggregate<T extends AggregateCArgs>(
+      args: Subset<T, AggregateCArgs>
+    ): Promise<GetCAggregateType<T>>
+    /**
      * Find zero or one C that matches the filter.
      * @param {FindUniqueCArgs} args - Arguments to find a C
      * @deprecated This will be deprecated please use prisma.c.findUnique
@@ -7018,13 +7055,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__CClient<C | null>, Prisma__CClient<CGetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyCArgs, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregateCArgs>(args: Subset<T, AggregateCArgs>): Promise<GetCAggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyCArgs, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
@@ -7449,6 +7483,12 @@ export namespace Prisma {
       args: Subset<T, DUpsertArgs>
     ): CheckSelect<T, Prisma__DClient<D>, Prisma__DClient<DGetPayload<T>>>
     /**
+     * Aggregate D.
+    **/
+    aggregate<T extends AggregateDArgs>(
+      args: Subset<T, AggregateDArgs>
+    ): Promise<GetDAggregateType<T>>
+    /**
      * Find zero or one D that matches the filter.
      * @param {FindUniqueDArgs} args - Arguments to find a D
      * @deprecated This will be deprecated please use prisma.d.findUnique
@@ -7465,13 +7505,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__DClient<D | null>, Prisma__DClient<DGetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyDArgs, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregateDArgs>(args: Subset<T, AggregateDArgs>): Promise<GetDAggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyDArgs, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
@@ -7894,6 +7931,12 @@ export namespace Prisma {
       args: Subset<T, EUpsertArgs>
     ): CheckSelect<T, Prisma__EClient<E>, Prisma__EClient<EGetPayload<T>>>
     /**
+     * Aggregate E.
+    **/
+    aggregate<T extends AggregateEArgs>(
+      args: Subset<T, AggregateEArgs>
+    ): Promise<GetEAggregateType<T>>
+    /**
      * Find zero or one E that matches the filter.
      * @param {FindUniqueEArgs} args - Arguments to find a E
      * @deprecated This will be deprecated please use prisma.e.findUnique
@@ -7910,13 +7953,10 @@ export namespace Prisma {
     ): CheckSelect<T, Prisma__EClient<E | null>, Prisma__EClient<EGetPayload<T> | null>>
     /**
      * Count
-     */
-    count(args?: Omit<FindManyEArgs, 'select' | 'include'>): Promise<number>
-
-    /**
-     * Aggregate
-     */
-    aggregate<T extends AggregateEArgs>(args: Subset<T, AggregateEArgs>): Promise<GetEAggregateType<T>>
+    **/
+    count(
+      args?: Omit<FindManyEArgs, 'select' | 'include'>
+    ): Promise<number>
   }
 
   /**
