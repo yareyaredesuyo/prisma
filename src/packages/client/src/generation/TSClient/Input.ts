@@ -13,7 +13,6 @@ export class InputField implements Generatable {
   ) { }
   public toTS(): string {
     const { field } = this
-
     const fieldTypes = field.inputTypes.map((t) => {
       let type =
         typeof t.type === 'string'

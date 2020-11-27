@@ -71,7 +71,7 @@ export class Model implements Generatable {
             this.collector,
           ),
         )
-      } else {
+      } else if(action !== 'aggregate') {
         argsTypes.push(
           new ArgsType(
             field.args,

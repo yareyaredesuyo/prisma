@@ -235,6 +235,7 @@ export type PrismaAction =
   | 'executeRaw'
   | 'queryRaw'
   | 'aggregate'
+  | 'count'
 
 /**
  * These options are being passed in to the middleware as "params"
