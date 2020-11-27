@@ -301,7 +301,6 @@ export class ModelDelegate implements Generatable {
 
     let actions = Object.entries(mapping).filter(
       ([key, value]) =>{
-        console.log(value, key);
         return key !== 'model' && key !== 'plural' && value
       }
     )
