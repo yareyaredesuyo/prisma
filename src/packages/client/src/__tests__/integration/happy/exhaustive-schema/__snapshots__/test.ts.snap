@@ -1444,7 +1444,26 @@ export namespace Prisma {
       args: Subset<T, PostUpsertArgs>
     ): CheckSelect<T, Prisma__PostClient<Post>, Prisma__PostClient<PostGetPayload<T>>>
     /**
-     * Aggregate Post.
+     * Allows you to perform aggregations operations on a Post.
+     *       @param {AggregatePostArgs} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregatePostArgs>(
       args: Subset<T, AggregatePostArgs>
@@ -1465,7 +1484,15 @@ export namespace Prisma {
       args: Subset<T, FindUniquePostArgs>
     ): CheckSelect<T, Prisma__PostClient<Post | null>, Prisma__PostClient<PostGetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of Posts.
+     * @param {FindManyPostArgs} args - Arguments to filter Posts to count.
+     * @example
+     * // Count the number of Posts
+     * const count = await prisma.post.count({
+     *   where: {
+     *     // ... the filter for the Posts we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyPostArgs, 'select' | 'include'>
@@ -2018,7 +2045,26 @@ export namespace Prisma {
       args: Subset<T, UserUpsertArgs>
     ): CheckSelect<T, Prisma__UserClient<User>, Prisma__UserClient<UserGetPayload<T>>>
     /**
-     * Aggregate User.
+     * Allows you to perform aggregations operations on a User.
+     *       @param {AggregateUserArgs} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregateUserArgs>(
       args: Subset<T, AggregateUserArgs>
@@ -2039,7 +2085,15 @@ export namespace Prisma {
       args: Subset<T, FindUniqueUserArgs>
     ): CheckSelect<T, Prisma__UserClient<User | null>, Prisma__UserClient<UserGetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of Users.
+     * @param {FindManyUserArgs} args - Arguments to filter Users to count.
+     * @example
+     * // Count the number of Users
+     * const count = await prisma.user.count({
+     *   where: {
+     *     // ... the filter for the Users we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyUserArgs, 'select' | 'include'>
@@ -2591,7 +2645,26 @@ export namespace Prisma {
       args: Subset<T, MUpsertArgs>
     ): CheckSelect<T, Prisma__MClient<M>, Prisma__MClient<MGetPayload<T>>>
     /**
-     * Aggregate M.
+     * Allows you to perform aggregations operations on a M.
+     *       @param {AggregateMArgs} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregateMArgs>(
       args: Subset<T, AggregateMArgs>
@@ -2612,7 +2685,15 @@ export namespace Prisma {
       args: Subset<T, FindUniqueMArgs>
     ): CheckSelect<T, Prisma__MClient<M | null>, Prisma__MClient<MGetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of Ms.
+     * @param {FindManyMArgs} args - Arguments to filter Ms to count.
+     * @example
+     * // Count the number of Ms
+     * const count = await prisma.m.count({
+     *   where: {
+     *     // ... the filter for the Ms we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyMArgs, 'select' | 'include'>
@@ -3164,7 +3245,26 @@ export namespace Prisma {
       args: Subset<T, NUpsertArgs>
     ): CheckSelect<T, Prisma__NClient<N>, Prisma__NClient<NGetPayload<T>>>
     /**
-     * Aggregate N.
+     * Allows you to perform aggregations operations on a N.
+     *       @param {AggregateNArgs} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregateNArgs>(
       args: Subset<T, AggregateNArgs>
@@ -3185,7 +3285,15 @@ export namespace Prisma {
       args: Subset<T, FindUniqueNArgs>
     ): CheckSelect<T, Prisma__NClient<N | null>, Prisma__NClient<NGetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of Ns.
+     * @param {FindManyNArgs} args - Arguments to filter Ns to count.
+     * @example
+     * // Count the number of Ns
+     * const count = await prisma.n.count({
+     *   where: {
+     *     // ... the filter for the Ns we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyNArgs, 'select' | 'include'>
@@ -3737,7 +3845,26 @@ export namespace Prisma {
       args: Subset<T, OneOptionalUpsertArgs>
     ): CheckSelect<T, Prisma__OneOptionalClient<OneOptional>, Prisma__OneOptionalClient<OneOptionalGetPayload<T>>>
     /**
-     * Aggregate OneOptional.
+     * Allows you to perform aggregations operations on a OneOptional.
+     *       @param {AggregateOneOptionalArgs} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregateOneOptionalArgs>(
       args: Subset<T, AggregateOneOptionalArgs>
@@ -3758,7 +3885,15 @@ export namespace Prisma {
       args: Subset<T, FindUniqueOneOptionalArgs>
     ): CheckSelect<T, Prisma__OneOptionalClient<OneOptional | null>, Prisma__OneOptionalClient<OneOptionalGetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of OneOptionals.
+     * @param {FindManyOneOptionalArgs} args - Arguments to filter OneOptionals to count.
+     * @example
+     * // Count the number of OneOptionals
+     * const count = await prisma.oneOptional.count({
+     *   where: {
+     *     // ... the filter for the OneOptionals we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyOneOptionalArgs, 'select' | 'include'>
@@ -4319,7 +4454,26 @@ export namespace Prisma {
       args: Subset<T, ManyRequiredUpsertArgs>
     ): CheckSelect<T, Prisma__ManyRequiredClient<ManyRequired>, Prisma__ManyRequiredClient<ManyRequiredGetPayload<T>>>
     /**
-     * Aggregate ManyRequired.
+     * Allows you to perform aggregations operations on a ManyRequired.
+     *       @param {AggregateManyRequiredArgs} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregateManyRequiredArgs>(
       args: Subset<T, AggregateManyRequiredArgs>
@@ -4340,7 +4494,15 @@ export namespace Prisma {
       args: Subset<T, FindUniqueManyRequiredArgs>
     ): CheckSelect<T, Prisma__ManyRequiredClient<ManyRequired | null>, Prisma__ManyRequiredClient<ManyRequiredGetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of ManyRequireds.
+     * @param {FindManyManyRequiredArgs} args - Arguments to filter ManyRequireds to count.
+     * @example
+     * // Count the number of ManyRequireds
+     * const count = await prisma.manyRequired.count({
+     *   where: {
+     *     // ... the filter for the ManyRequireds we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyManyRequiredArgs, 'select' | 'include'>
@@ -4901,7 +5063,26 @@ export namespace Prisma {
       args: Subset<T, OptionalSide1UpsertArgs>
     ): CheckSelect<T, Prisma__OptionalSide1Client<OptionalSide1>, Prisma__OptionalSide1Client<OptionalSide1GetPayload<T>>>
     /**
-     * Aggregate OptionalSide1.
+     * Allows you to perform aggregations operations on a OptionalSide1.
+     *       @param {AggregateOptionalSide1Args} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregateOptionalSide1Args>(
       args: Subset<T, AggregateOptionalSide1Args>
@@ -4922,7 +5103,15 @@ export namespace Prisma {
       args: Subset<T, FindUniqueOptionalSide1Args>
     ): CheckSelect<T, Prisma__OptionalSide1Client<OptionalSide1 | null>, Prisma__OptionalSide1Client<OptionalSide1GetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of OptionalSide1s.
+     * @param {FindManyOptionalSide1Args} args - Arguments to filter OptionalSide1s to count.
+     * @example
+     * // Count the number of OptionalSide1s
+     * const count = await prisma.optionalSide1.count({
+     *   where: {
+     *     // ... the filter for the OptionalSide1s we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyOptionalSide1Args, 'select' | 'include'>
@@ -5474,7 +5663,26 @@ export namespace Prisma {
       args: Subset<T, OptionalSide2UpsertArgs>
     ): CheckSelect<T, Prisma__OptionalSide2Client<OptionalSide2>, Prisma__OptionalSide2Client<OptionalSide2GetPayload<T>>>
     /**
-     * Aggregate OptionalSide2.
+     * Allows you to perform aggregations operations on a OptionalSide2.
+     *       @param {AggregateOptionalSide2Args} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregateOptionalSide2Args>(
       args: Subset<T, AggregateOptionalSide2Args>
@@ -5495,7 +5703,15 @@ export namespace Prisma {
       args: Subset<T, FindUniqueOptionalSide2Args>
     ): CheckSelect<T, Prisma__OptionalSide2Client<OptionalSide2 | null>, Prisma__OptionalSide2Client<OptionalSide2GetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of OptionalSide2s.
+     * @param {FindManyOptionalSide2Args} args - Arguments to filter OptionalSide2s to count.
+     * @example
+     * // Count the number of OptionalSide2s
+     * const count = await prisma.optionalSide2.count({
+     *   where: {
+     *     // ... the filter for the OptionalSide2s we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyOptionalSide2Args, 'select' | 'include'>
@@ -6068,7 +6284,26 @@ export namespace Prisma {
       args: Subset<T, AUpsertArgs>
     ): CheckSelect<T, Prisma__AClient<A>, Prisma__AClient<AGetPayload<T>>>
     /**
-     * Aggregate A.
+     * Allows you to perform aggregations operations on a A.
+     *       @param {AggregateAArgs} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregateAArgs>(
       args: Subset<T, AggregateAArgs>
@@ -6089,7 +6324,15 @@ export namespace Prisma {
       args: Subset<T, FindUniqueAArgs>
     ): CheckSelect<T, Prisma__AClient<A | null>, Prisma__AClient<AGetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of As.
+     * @param {FindManyAArgs} args - Arguments to filter As to count.
+     * @example
+     * // Count the number of As
+     * const count = await prisma.a.count({
+     *   where: {
+     *     // ... the filter for the As we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyAArgs, 'select' | 'include'>
@@ -6582,7 +6825,26 @@ export namespace Prisma {
       args: Subset<T, BUpsertArgs>
     ): CheckSelect<T, Prisma__BClient<B>, Prisma__BClient<BGetPayload<T>>>
     /**
-     * Aggregate B.
+     * Allows you to perform aggregations operations on a B.
+     *       @param {AggregateBArgs} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregateBArgs>(
       args: Subset<T, AggregateBArgs>
@@ -6603,7 +6865,15 @@ export namespace Prisma {
       args: Subset<T, FindUniqueBArgs>
     ): CheckSelect<T, Prisma__BClient<B | null>, Prisma__BClient<BGetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of Bs.
+     * @param {FindManyBArgs} args - Arguments to filter Bs to count.
+     * @example
+     * // Count the number of Bs
+     * const count = await prisma.b.count({
+     *   where: {
+     *     // ... the filter for the Bs we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyBArgs, 'select' | 'include'>
@@ -7033,7 +7303,26 @@ export namespace Prisma {
       args: Subset<T, CUpsertArgs>
     ): CheckSelect<T, Prisma__CClient<C>, Prisma__CClient<CGetPayload<T>>>
     /**
-     * Aggregate C.
+     * Allows you to perform aggregations operations on a C.
+     *       @param {AggregateCArgs} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregateCArgs>(
       args: Subset<T, AggregateCArgs>
@@ -7054,7 +7343,15 @@ export namespace Prisma {
       args: Subset<T, FindUniqueCArgs>
     ): CheckSelect<T, Prisma__CClient<C | null>, Prisma__CClient<CGetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of Cs.
+     * @param {FindManyCArgs} args - Arguments to filter Cs to count.
+     * @example
+     * // Count the number of Cs
+     * const count = await prisma.c.count({
+     *   where: {
+     *     // ... the filter for the Cs we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyCArgs, 'select' | 'include'>
@@ -7483,7 +7780,26 @@ export namespace Prisma {
       args: Subset<T, DUpsertArgs>
     ): CheckSelect<T, Prisma__DClient<D>, Prisma__DClient<DGetPayload<T>>>
     /**
-     * Aggregate D.
+     * Allows you to perform aggregations operations on a D.
+     *       @param {AggregateDArgs} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregateDArgs>(
       args: Subset<T, AggregateDArgs>
@@ -7504,7 +7820,15 @@ export namespace Prisma {
       args: Subset<T, FindUniqueDArgs>
     ): CheckSelect<T, Prisma__DClient<D | null>, Prisma__DClient<DGetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of Ds.
+     * @param {FindManyDArgs} args - Arguments to filter Ds to count.
+     * @example
+     * // Count the number of Ds
+     * const count = await prisma.d.count({
+     *   where: {
+     *     // ... the filter for the Ds we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyDArgs, 'select' | 'include'>
@@ -7931,7 +8255,26 @@ export namespace Prisma {
       args: Subset<T, EUpsertArgs>
     ): CheckSelect<T, Prisma__EClient<E>, Prisma__EClient<EGetPayload<T>>>
     /**
-     * Aggregate E.
+     * Allows you to perform aggregations operations on a E.
+     *       @param {AggregateEArgs} args - Select which aggregations you would like to apply and on what fields.
+     *       @example
+     *       // Ordered by age ascending
+     *       // Where email contains prisma.io
+     *       // Limited to the 10 users
+     *       const aggregations = await prisma.user.aggregate({
+     *         avg: {
+     *           age: true,
+     *         },
+     *         where: {
+     *           email: {
+     *             contains: "prisma.io",
+     *           },
+     *         },
+     *         orderBy: {
+     *           age: "asc",
+     *         },
+     *         take: 10,
+     *       })
     **/
     aggregate<T extends AggregateEArgs>(
       args: Subset<T, AggregateEArgs>
@@ -7952,7 +8295,15 @@ export namespace Prisma {
       args: Subset<T, FindUniqueEArgs>
     ): CheckSelect<T, Prisma__EClient<E | null>, Prisma__EClient<EGetPayload<T> | null>>
     /**
-     * Count
+     * Count the number of Es.
+     * @param {FindManyEArgs} args - Arguments to filter Es to count.
+     * @example
+     * // Count the number of Es
+     * const count = await prisma.e.count({
+     *   where: {
+     *     // ... the filter for the Es we want to count
+     *   }
+     * })
     **/
     count(
       args?: Omit<FindManyEArgs, 'select' | 'include'>
