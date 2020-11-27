@@ -175,9 +175,42 @@ const ${lowerCase(mapping.model)} = await ${method}({
   }
 })`
     case DMMF.ModelAction.count:
-      return `Count`
+      return `Count the number of ${plural}.
+@param {${getModelArgName(
+        model.name,
+        action,
+      )}} args - Arguments to filter ${plural} to count.
+@example
+// Count the number of ${plural}
+const count = await ${method}({
+  where: {
+    // ... the filter for the ${plural} we want to count
+  }
+})`
     case DMMF.ModelAction.aggregate:
-      return `Aggregate ${singular}.`
+      return `Allows you to perform aggregations operations on a ${singular}.
+      @param {${getModelArgName(
+              model.name,
+              action,
+            )}} args - Select which aggregations you would like to apply and on what fields.
+      @example
+      // Ordered by age ascending
+      // Where email contains prisma.io
+      // Limited to the 10 users
+      const aggregations = await prisma.user.aggregate({
+        avg: {
+          age: true,
+        },
+        where: {
+          email: {
+            contains: "prisma.io",
+          },
+        },
+        orderBy: {
+          age: "asc",
+        },
+        take: 10,
+      })`
   }
 }
 
@@ -260,10 +293,14 @@ export const topLevelArgsJsDocs: {
   delete: {
     where: (singular, plural): string => `Filter which ${singular} to delete.`,
   },
-  count: {},
-  aggregate: {},
-  updateMany: {},
-  deleteMany: {},
+  count: {
+  },
+  aggregate: {
+  },
+  updateMany: {
+  },
+  deleteMany: {
+  },
 }
 /* eslint-enable @typescript-eslint/no-unused-vars */
 
