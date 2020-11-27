@@ -22,7 +22,7 @@ import {
 } from '../utils'
 import { ArgsType, MinimalArgsType } from './Args'
 import { Generatable, TS } from './Generatable'
-import { ExportCollector, getMethodJSDoc } from './helpers'
+import { ExportCollector, getArgs, getGenericMethod, getMethodJSDoc } from './helpers'
 import { InputType } from './Input'
 import { OutputField, OutputType } from './Output'
 import { SchemaOutputType } from './SchemaOutput'
@@ -299,12 +299,14 @@ export class ModelDelegate implements Generatable {
     // TODO: handle findUnique
     mapping['findOne'] = mapping['findUnique']
 
-    const actions = Object.entries(mapping).filter(
-      ([key, value]) =>
-        key !== 'model' && key !== 'plural' && key !== 'aggregate' && value,
+    let actions = Object.entries(mapping).filter(
+      ([key, value]) =>{
+        console.log(value, key);
+        return key !== 'model' && key !== 'plural' && value
+      }
     )
+    actions.push(["count", []])
 
-    // TODO: The following code needs to be split up and is a mess
     return `\
 export interface ${name}Delegate {
 ${indent(
@@ -312,35 +314,13 @@ ${indent(
     .map(
       ([actionName]: [any, any]): string =>
         `${getMethodJSDoc(actionName, mapping, model)}
-${actionName}<T extends ${getModelArgName(name, actionName)}>(
-  args${
-    actionName === DMMF.ModelAction.findMany ||
-    actionName === DMMF.ModelAction.findFirst ||
-    actionName === DMMF.ModelAction.deleteMany
-      ? '?'
-      : ''
-  }: Subset<T, ${getModelArgName(name, actionName)}>
+${actionName}${getGenericMethod(name, actionName)}(
+  ${getArgs(name, actionName)}
 ): ${getSelectReturnType({ name, actionName, projection: Projection.select })}`,
     )
     .join('\n'),
   TAB_SIZE,
 )}
-  /**
-   * Count
-   */
-  count(args?: Omit<${getModelArgName(
-    name,
-    DMMF.ModelAction.findMany,
-  )}, 'select' | 'include'>): Promise<number>
-
-  /**
-   * Aggregate
-   */
-  aggregate<T extends ${getAggregateArgsName(
-    name,
-  )}>(args: Subset<T, ${getAggregateArgsName(
-      name,
-    )}>): Promise<${getAggregateGetName(name)}<T>>
 }
 
 /**

@@ -113,6 +113,10 @@ export function getModelArgName(
       return `${modelName}CreateArgs`
     case DMMF.ModelAction.deleteMany:
       return `${modelName}DeleteManyArgs`
+    case DMMF.ModelAction.aggregate:
+      return getAggregateArgsName(modelName)
+    case DMMF.ModelAction.count:
+      return getModelArgName(modelName, DMMF.ModelAction.findMany)
   }
 }
 
@@ -208,6 +212,8 @@ export function getSelectReturnType({
   isField = false, // eslint-disable-line @typescript-eslint/no-unused-vars
 }: SelectReturnTypeOptions): string {
   const isList = actionName === DMMF.ModelAction.findMany
+  if(actionName === 'count') return `Promise<number>`
+  if(actionName === 'aggregate') return `Promise<${getAggregateGetName(name)}<T>>`
 
   if (actionName === 'deleteMany' || actionName === 'updateMany') {
     return `Promise<BatchPayload>`

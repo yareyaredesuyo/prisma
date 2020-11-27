@@ -1,9 +1,6 @@
 import { DMMF } from '../../runtime/dmmf-types'
-import {
-  capitalize,
-  lowerCase,
-} from '../../runtime/utils/common'
-import { getModelArgName, unique } from '../utils'
+import { capitalize, lowerCase } from '../../runtime/utils/common'
+import { getAggregateArgsName, getModelArgName, unique } from '../utils'
 
 export function getMethodJSDocBody(
   action: DMMF.ModelAction | 'findOne',
@@ -177,6 +174,10 @@ const ${lowerCase(mapping.model)} = await ${method}({
     // ... the filter for the ${singular} we want to update
   }
 })`
+    case DMMF.ModelAction.count:
+      return `Count`
+    case DMMF.ModelAction.aggregate:
+      return `Aggregate ${singular}.`
   }
 }
 
@@ -187,7 +188,28 @@ export function getMethodJSDoc(
 ): string {
   return wrapComment(getMethodJSDocBody(action, mapping, model))
 }
-
+export function getGenericMethod(name: string, actionName: DMMF.ModelAction) {
+  if (actionName === 'count') return ''
+  if (actionName === 'aggregate')
+    return `<T extends ${getAggregateArgsName(name)}>`
+  return `<T extends ${getModelArgName(name, actionName)}>`
+}
+export function getArgs(name: string, actionName: DMMF.ModelAction) {
+  if (actionName === 'count')
+    return `args?: Omit<${getModelArgName(
+      name,
+      DMMF.ModelAction.findMany,
+    )}, 'select' | 'include'>`
+  if (actionName === 'aggregate')
+    return `args: Subset<T, ${getAggregateArgsName(name)}>`
+  return `args${
+    actionName === DMMF.ModelAction.findMany ||
+    actionName === DMMF.ModelAction.findFirst ||
+    actionName === DMMF.ModelAction.deleteMany
+      ? '?'
+      : ''
+  }: Subset<T, ${getModelArgName(name, actionName)}>`
+}
 export function wrapComment(str: string): string {
   return `/**\n${str
     .split('\n')
@@ -196,7 +218,9 @@ export function wrapComment(str: string): string {
 }
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
-export const topLevelArgsJsDocs = {
+export const topLevelArgsJsDocs: {
+  [key in DMMF.ModelAction | 'findOne']: any
+} = {
   findOne: {
     where: (singular, plural): string => `Filter, which ${singular} to fetch.`,
   },
@@ -236,6 +260,10 @@ export const topLevelArgsJsDocs = {
   delete: {
     where: (singular, plural): string => `Filter which ${singular} to delete.`,
   },
+  count: {},
+  aggregate: {},
+  updateMany: {},
+  deleteMany: {},
 }
 /* eslint-enable @typescript-eslint/no-unused-vars */
 

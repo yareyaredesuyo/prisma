@@ -179,6 +179,7 @@ export namespace DMMF {
     delete?: string | null
     deleteMany?: string | null
     aggregate?: string | null
+    count?: string | null
   }
 
   export enum ModelAction {
@@ -191,5 +192,8 @@ export namespace DMMF {
     upsert = 'upsert',
     delete = 'delete',
     deleteMany = 'deleteMany',
+    count= 'count',
+    aggregate= 'aggregate'
+
   }
 }
