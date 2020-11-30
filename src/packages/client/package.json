@@ -113,7 +113,7 @@
     "replace-string": "3.1.0",
     "rimraf": "3.0.2",
     "rollup": "2.34.0",
-    "rollup-plugin-dts": "1.4.14",
+    "rollup-plugin-dts": "2.0.0",
     "set-value": "3.0.2",
     "source-map-support": "0.5.19",
     "sql-template-tag": "4.0.0",
