@@ -59,8 +59,8 @@ const { count } = await ${method}({
       const onlySelect = firstScalar
         ? `\n// Only select the \`${firstScalar.name}\`
 const ${lowerCase(mapping.model)}With${capitalize(
-          firstScalar.name,
-        )}Only = await ${method}({ select: { ${firstScalar.name}: true } })`
+            firstScalar.name,
+          )}Only = await ${method}({ select: { ${firstScalar.name}: true } })`
         : ''
 
       return `Find zero or more ${plural} that matches the filter.
@@ -97,7 +97,9 @@ const ${lowerCase(mapping.model)} = await ${method}({
         model.name,
         action,
       )}} args - Arguments to find a ${singular}
-@deprecated This will be deprecated please use ${`prisma.${lowerCase(mapping.model)}.findUnique`}
+@deprecated This will be deprecated please use ${`prisma.${lowerCase(
+        mapping.model,
+      )}.findUnique`}
 @example
 // Get one ${singular}
 const ${lowerCase(mapping.model)} = await ${method}({
@@ -190,9 +192,9 @@ const count = await ${method}({
     case DMMF.ModelAction.aggregate:
       return `Allows you to perform aggregations operations on a ${singular}.
       @param {${getModelArgName(
-              model.name,
-              action,
-            )}} args - Select which aggregations you would like to apply and on what fields.
+        model.name,
+        action,
+      )}} args - Select which aggregations you would like to apply and on what fields.
       @example
       // Ordered by age ascending
       // Where email contains prisma.io
@@ -251,9 +253,7 @@ export function wrapComment(str: string): string {
 }
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
-export const topLevelArgsJsDocs: {
-  [key in DMMF.ModelAction | 'findOne']: any
-} = {
+export const topLevelArgsJsDocs = {
   findOne: {
     where: (singular, plural): string => `Filter, which ${singular} to fetch.`,
   },
@@ -262,6 +262,15 @@ export const topLevelArgsJsDocs: {
   },
   findFirst: {
     where: (singular, plural): string => `Filter, which ${singular} to fetch.`,
+    orderBy: (singular, plural): string =>
+      `Determine the order of ${plural} to fetch.`,
+    cursor: (singular, plural): string =>
+      `Sets the position for searching for ${plural}.`,
+    take: (singular, plural): string =>
+      `The number of ${plural} to search. If negative number, it will take ${plural} before the \`cursor\`.`,
+    skip: (singular, plural): string => `Skip the first \`n\` ${plural}.`,
+    distinct: (singular, plural): string =>
+      `Filter by unique combinations of ${plural}.`,
   },
   findMany: {
     where: (singular, plural): string => `Filter, which ${plural} to fetch.`,
@@ -293,13 +302,25 @@ export const topLevelArgsJsDocs: {
   delete: {
     where: (singular, plural): string => `Filter which ${singular} to delete.`,
   },
-  count: {
-  },
   aggregate: {
+    where: (singular, plural) => `Filter which ${plural} to aggregate`,
+    orderBy: (singular, plural) => ``,
+    cursor: (singular, plural) => ``,
+    take: (singular, plural) => ``,
+    skip: (singular, plural) => ``,
+    distinct: (singular, plural) => ``,
+    count: (singular, plural) => ``,
+    avg: (singular, plural) => ``,
+    sum: (singular, plural) => ``,
+    min: (singular, plural) => ``,
+    max: (singular, plural) => ``,
   },
   updateMany: {
+    data: (singular, plural) => `The data used to update ${plural}.`,
+    where: (singular, plural) => `Filter which ${plural} to update`,
   },
   deleteMany: {
+    where: (singular, plural) => `Filter which ${plural} to delete`,
   },
 }
 /* eslint-enable @typescript-eslint/no-unused-vars */
